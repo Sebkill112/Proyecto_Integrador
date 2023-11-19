@@ -21,4 +21,6 @@ public interface LibrosPorSedeRepository extends JpaRepository<LibrosPorSede, In
 	@Query(value ="update libroshassede set stock = stock + 1 where codigo_libro = ?1 and codigo_sede = ?2",nativeQuery = true)
 	public void aumentarStock(int codLibro, int codSede);
 
+	public LibrosPorSede findBySedeLibroCodigoAndLibroSedeCodigo(int idLibro, int idSede);
+
 }
